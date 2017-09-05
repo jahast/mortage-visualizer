@@ -10,7 +10,7 @@
 import * as express from 'express';
 
 
-export const extendExpressResponse = (req: myExpress.Request, res: myExpress.Response, next: express.NextFunction) => {
+export const extendExpressResponse = (req: Express.Request, res: myExpress.Response, next: express.NextFunction) => {
 
     /**
      * 200 - OK

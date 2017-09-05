@@ -17,11 +17,6 @@ declare namespace myExpress {
     interface NextFunction extends expressLib.NextFunction {
     }
 
-    interface Request extends expressLib.Request {
-        tokeninfo: auth0.User;
-        user: resources.User;
-    }
-
     interface Response extends expressLib.Response {
         ok<T>(data: T, options?: ResponseOptions): void;
         created<T>(data: T, options?: ResponseOptions): void;

@@ -1,7 +1,7 @@
 declare namespace interfaces {
 
     interface Middleware {
-        use(req: myExpress.Request, res: myExpress.Response, next: myExpress.NextFunction): void;
+        use(req: Express.Request, res: myExpress.Response, next: myExpress.NextFunction): void;
     }
 
     interface Listener {

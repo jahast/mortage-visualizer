@@ -12,9 +12,6 @@ export const Types = {
     ...TYPE,
     Lib: Symbol('Lib'),
     Core: Symbol('Core'),
-    Model: Symbol('Model'),
     Service: Symbol('Service'),
-    Listener: Symbol('Listener'),
-    Repository: Symbol('Repository'),
-    Middleware: Symbol('Middleware')
+    Listener: Symbol('Listener')
 };

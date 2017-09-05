@@ -9,27 +9,15 @@
  */
 
 export const Targets = {
-    Model:     {
-        User: 'User'
-    },
-    Repository:     {
-        UserRepository: 'UserRepository'
-    },
     Service:     {
-        UserService: 'UserService',
         MortageService: 'MortageService'
     },
-    Middleware:     {
-        PopulateUserMiddleware: 'PopulateUserMiddleware'
-    },
     Listener:     {
-        user: {
-            UserAuthenticatedListener: 'UserAuthenticatedListener',
-            UserCreatedListener: 'UserCreatedListener'
+        mortage: {
+            MortageCalculatedListener: 'MortageCalculatedListener'
         }
     },
     Controller:     {
-        UserController: 'UserController',
         MortageController: 'MortageController'
     }
 };

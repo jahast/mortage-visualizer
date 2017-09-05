@@ -45,12 +45,8 @@ export class IoC {
             this.container = this.libConfiguration(this.container);
         }
 
-        await this.bindModels();
-        await this.bindRepositories();
         await this.bindServices();
-
         await this.bindListeners();
-        await this.bindMiddlewares();
         await this.bindControllers();
 
         if (this.customConfiguration) {
@@ -63,35 +59,11 @@ export class IoC {
         this.container.bind<EventEmitter>(Types.Core).toConstantValue(events).whenTargetNamed(Core.Events);
     }
 
-    private bindModels(): Promise<void> {
-        return this.bindFiles('/models/**/*.ts', Targets.Model, (name: any, value: any) => {
-            decorate(injectable(), value);
-            this.container
-                .bind<any>(Types.Model)
-                .toConstantValue(value)
-                .whenTargetNamed(name);
-        });
-    }
-
-    private bindRepositories(): Promise<void> {
-        return this.bindFiles(
-            '/repositories/**/*Repository.ts',
-            Targets.Repository,
-            (name: any, value: any) => this.bindFile(Types.Repository, name, value));
-    }
-
     private bindServices(): Promise<void> {
         return this.bindFiles(
             '/services/**/*Service.ts',
             Targets.Service,
             (name: any, value: any) => this.bindFile(Types.Service, name, value));
-    }
-
-    private bindMiddlewares(): Promise<void> {
-        return this.bindFiles(
-            '/middlewares/**/*Middleware.ts',
-            Targets.Middleware,
-            (name: any, value: any) => this.bindFile(Types.Middleware, name, value));
     }
 
     private bindControllers(): Promise<void> {

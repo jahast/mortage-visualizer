@@ -14,7 +14,7 @@ export class ApiInfo {
         if (Environment.isTruthy(process.env.API_INFO_ENABLED || 'true')) {
             app.get(
                 ApiInfo.getRoute(),
-                (req: myExpress.Request, res: myExpress.Response) => {
+                (req: Express.Request, res: myExpress.Response) => {
                     const pkg = Environment.getPkg();
                     const links = {
                         links: {}
