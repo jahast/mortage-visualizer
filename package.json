@@ -5,7 +5,7 @@
   "main": "src/app.ts",
   "scripts": {
     "setup": "yarn install",
-    "build:client": "yarn run banner build-client && cd client && yarn run build",
+    "build:client": "yarn run banner build-client && cd ./client/ && yarn run build",
     "build:app": "yarn run build:client && yarn run build:server",
     "serve": "yarn run banner serve && \"./node_modules/.bin/nodemon\" --watch src --watch .env",
     "build:server": "yarn run banner build-server && yarn run lint && yarn run clean:dist && yarn run transpile && yarn run copy:assets",
@@ -117,7 +117,6 @@
     "cross-env": "^5.0.5",
     "jest": "^20.0.3",
     "jest-cli": "^21.0.1",
-    "ts-jest": "^20.0.7",
-    "webpack": "^3.3.0"
+    "ts-jest": "^20.0.7"
   }
 }

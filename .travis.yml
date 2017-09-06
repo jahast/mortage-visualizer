@@ -3,6 +3,7 @@ node_js:
   - 7.7.3
 install:
   - yarn install
+  - cd ./client/ && yarn install
 scripts:
   - yarn test
 env:
