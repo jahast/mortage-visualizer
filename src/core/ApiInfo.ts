@@ -7,7 +7,7 @@ import { ApiMonitor } from './ApiMonitor';
 export class ApiInfo {
 
     public static getRoute(): string {
-        return process.env.APP_URL_PREFIX || '/api' + process.env.API_INFO_ROUTE || '/info';
+        return process.env.APP_URL_PREFIX! + process.env.API_INFO_ROUTE!;
     }
 
     public setup(app: express.Application): void {

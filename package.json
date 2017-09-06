@@ -21,6 +21,7 @@
     "transpile": "./node_modules/.bin/tsc",
     "clean": "yarn run banner clean && yarn run clean:dist",
     "clean:dist": "./node_modules/.bin/trash './dist'",
+    "copy:client": "./node_modules/.bin/copyup -f ./client/dist/* ./dist/client",
     "copy:assets": "yarn run copy:swagger && yarn run copy:public",
     "copy:swagger": "./node_modules/.bin/copyup ./src/api/swagger.json ./dist",
     "copy:public": "./node_modules/.bin/copyup ./src/public/* ./dist",
