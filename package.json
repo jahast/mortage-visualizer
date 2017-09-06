@@ -9,7 +9,7 @@
     "build:app": "yarn run build:client && yarn run build:server",
     "serve": "yarn run banner serve && \"./node_modules/.bin/nodemon\" --watch src --watch .env",
     "build:server": "yarn run banner build-server && yarn run lint && yarn run clean:dist && yarn run transpile && yarn run copy:assets",
-    "start": "node dist/app.js",
+    "start": "node ./dist/app.js",
     "pipeline": "yarn run build:app && yarn run start",
     "heroku-prebuild": "yarn run build:app",
     "asd": "\"./node_modules/.bin/jest\" --testPathPattern=unit",
