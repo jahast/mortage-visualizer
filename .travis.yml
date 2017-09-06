@@ -12,6 +12,7 @@ notifications:
 deploy:
   provider: heroku
   app: mortage-visualizer
+  skip_cleanup: true
   run:
   - "yarn run setup"
   - "yarn run build:app"

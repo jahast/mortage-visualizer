@@ -10,6 +10,7 @@
     "serve": "yarn run banner serve && \"./node_modules/.bin/nodemon\" --watch src --watch .env",
     "build:server": "yarn run banner build-server && yarn run lint && yarn run clean:dist && yarn run transpile && yarn run copy:assets",
     "start": "node dist/app.js",
+    "heroku-prebuild": "yarn run build:app",
     "asd": "\"./node_modules/.bin/jest\" --testPathPattern=unit",
     "pretest": "./node_modules/.bin/tslint -c ./tslint.json -t stylish './test/unit/**/*.ts'",
     "test": "yarn run banner test && cross-env NODE_ENV=test \"./node_modules/.bin/jest\" --testPathPattern=unit",
