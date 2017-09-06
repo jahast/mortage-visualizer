@@ -4,7 +4,7 @@ node_js:
 install:
 - yarn install
 scripts:
-- npm test
+- yarn test
 env:
 - APP_HOST=https://mortage-visualizer.herokuapp.com/ APP_PORT=80
 notifications:
@@ -13,10 +13,6 @@ deploy:
   provider: heroku
   app: mortage-visualizer
   skip_cleanup: true
-  run:
-  - "yarn run setup"
-  - "yarn run build:app"
-  - "yarn run start"
   api_key:
     secure: FFC1qUW47PS8xJWg3YjW76Vc7WEa5ZL6uzn1O2ypccn31bvVvKtN8oV+5TN/dTZr9LsHRdHXFnf+B4UfPA1ZvbGPo2+GLPK2/dvlmsguAgWHGYj+a5Rnrzw9xsXj+sN0Q7wP2lOU4zfuKFDXhr8OHyny8eYG4vXfAuDduxp8YcCjAFvQmnxy5aPAPBiyrSWdhfGARhR/WYeK+LasC2vDt4M13qtR0rE64HRrJV7O+gNjs22je6FJ7T1M7BOgBzfO+qI7FVnuE5+q6LTrX9YTd3tX4N/x5a1foXM+dDn8hA02VnGh+D9hI95AcGNZqrzm8IJbxNC2F5+otBZQvpIgc8bHV8+tRLt9aLu6UyODSTuxGsTwR9YjgRLf5LzWIw3VV6YkR0rFXrV9KokXmH/i77LNDwAyrp6E97SCvMRgQTNt+asfwxwkaRInI0jYYpmhyolu0wzjVCBWDB9maMm/ACTPAtxPLC7m4A4JjmHTl1qBhbOOgscynmOxtzR2emNqPVEuhogll7HvO3uI09ihpaN+ZfJ5zuy9t5tlQkO1IOCtSltkNh3J/ob/RbWsZuNdXXGVYo1aMSrZ1B35Ra1BA4jU1Qlx4VaQ/8YS0Iigu1HSsC6vLxKaP08OhqWzC/uNR48ylSGXCsXsaq5l0YdtUjEQrehUTmh6GAm+Uze/PZ0=
 
