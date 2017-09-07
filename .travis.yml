@@ -10,7 +10,7 @@ before_install: # if "install" is overridden
 cache:
   yarn: true
 install:
-  - yarn install && cd ./src/client/ && yarn install
+  - yarn install && cd ./src/client/ && yarn install && cd ../..
 scripts:
   - yarn test
 env:
