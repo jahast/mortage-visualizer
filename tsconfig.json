@@ -32,11 +32,13 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
     },
+    "files": [
+        "src/client/types/models.d.ts"
+    ],
     "include": [
-        "src/**/*",
-        "client/types/models.d.ts"
+        "src/**/*"
     ],
     "exclude": [
-        "knexfile.ts"
+        "src/client/**/*"
     ]
 }

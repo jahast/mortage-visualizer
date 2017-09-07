@@ -2,13 +2,15 @@ language: node_js
 node_js:
   - 7.7.3
 install:
-  - yarn install && cd ./client/ && yarn install && cd ..
+  - yarn install
 scripts:
   - yarn test
 env:
-  - APP_HOST=https://mortage-visualizer.herokuapp.com/ APP_PORT=80 CLIENT_PATH=./../client
+  - APP_HOST=https://mortage-visualizer.herokuapp.com/ APP_PORT=80
 notifications:
   email: false
+before_deploy:
+  - yarn run build:app
 deploy:
   provider: heroku
   app: mortage-visualizer

@@ -14,6 +14,9 @@
         "object-literal-sort-keys": false,
         "arrow-parens": false,
         "no-string-literal": false,
+        "exclude": [
+            "src/client/**/*"
+        ],
         "member-ordering": [
             true,
             {
