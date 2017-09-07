@@ -5,7 +5,7 @@
   "main": "src/app.ts",
   "scripts": {
     "setup": "yarn install",
-    "build:client": "yarn run banner build-client && cd ./src/client/ && yarn run build",
+    "build:client": "yarn run banner build-client && cd ./src/client/ && npm run build",
     "build:app": "yarn run build:client && yarn run build:server && yarn run copy:client",
     "serve": "yarn run banner serve && \"./node_modules/.bin/nodemon\" --watch src --watch .env",
     "build:server": "yarn run banner build-server && yarn run lint && yarn run clean:dist && yarn run transpile && yarn run copy:assets",
