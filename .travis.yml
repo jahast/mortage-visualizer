@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - 7.7.3
 install:
-  - yarn install && cd ./src/client/ && yarn install && cd .. && cd ..
+  - yarn install && cd ./src/client/ && yarn install && cd ../..
 scripts:
   - yarn test
 env:
