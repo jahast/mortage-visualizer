@@ -10,7 +10,6 @@ import * as path from 'path';
 import * as morgan from 'morgan';
 import * as helmet from 'helmet';
 import * as express from 'express';
-import * as favicon from 'serve-favicon';
 import * as bodyParser from 'body-parser';
 import * as compression from 'compression';
 import { Logger } from '../core/Logger';
@@ -40,12 +39,9 @@ export class AppConfig implements Configurable {
                 extended: true
             }))
 
-            // Serve static filles like images from the public folder
+            // Serve static files like images from the public folder
             .use(express.static(path.join(__dirname, '..', 'public'), { maxAge: 31557600000 }))
-            .use('/', express.static(path.join(__dirname, '..', 'client', 'dist')))
-
-            // A favicon is a visual cue that client software, like browsers, use to identify a site
-            .use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')))
+            .get('/', express.static(path.join(__dirname, '..', 'client', 'dist')))
 
             // HTTP request logger middleware for node.js
             .use(morgan('dev', {
