@@ -33,3 +33,4 @@ test/**/*.js
 test/**/*.js.map
 coverage/
 !test/preprocessor.js
+!src/client/webpack.config.js
