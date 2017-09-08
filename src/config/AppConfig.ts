@@ -41,7 +41,7 @@ export class AppConfig implements Configurable {
 
             // Serve static files like images from the public folder
             .use(express.static(path.join(__dirname, '..', 'public'), { maxAge: 31557600000 }))
-            .get('/', express.static(path.join(__dirname, '..', 'client', 'dist')))
+            .use('/', express.static(path.join(__dirname, '..', 'client', 'dist')))
 
             // HTTP request logger middleware for node.js
             .use(morgan('dev', {
