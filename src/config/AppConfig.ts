@@ -10,6 +10,7 @@ import * as path from 'path';
 import * as morgan from 'morgan';
 import * as helmet from 'helmet';
 import * as express from 'express';
+import * as favicon from 'serve-favicon';
 import * as bodyParser from 'body-parser';
 import * as compression from 'compression';
 import { Logger } from '../core/Logger';
@@ -42,6 +43,8 @@ export class AppConfig implements Configurable {
             // Serve static files like images from the public folder
             .use(express.static(path.join(__dirname, '..', 'public'), { maxAge: 31557600000 }))
             .use('/', express.static(path.join(__dirname, '..', 'client', 'dist')))
+
+            .use(favicon(path.join(__dirname, '..', 'public', 'favicon.png')))
 
             // HTTP request logger middleware for node.js
             .use(morgan('dev', {
