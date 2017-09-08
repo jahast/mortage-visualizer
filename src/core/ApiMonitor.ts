@@ -12,7 +12,7 @@ export class ApiMonitor {
     public setup(app: express.Application): void {
         if (Environment.isTruthy(process.env.MONITOR_ENABLED!)) {
             app.use(monitor());
-            app.get(ApiMonitor.getRoute(), monitor().pageRoute);
+            app.use(ApiMonitor.getRoute(), monitor().pageRoute);
         }
     }
 }
